@@ -27,7 +27,7 @@ We trigger transition in many of the same ways we might trigger a Javascript act
 There are **specific properties** associated with transtions that let us set exactly how we want our transition to execute.
 
 
-``trasition-property`` lets us specify which CSS property (or properties) we are setting the transition on. This can be written to specify one CSS property, or all CSS properties. A full list of supported properties can be found [here](https://www.w3.org/TR/css3-transitions/#animatable-css).
+``transition-property`` lets us specify which CSS property (or properties) we are setting the transition on. This can be written to specify one CSS property, or all CSS properties. A full list of supported properties can be found [here](https://www.w3.org/TR/css3-transitions/#animatable-css).
 
 It looks like this when we specify one CSS property:
 
@@ -74,7 +74,7 @@ div .d { transition-delay: 3s; }
 * ease-in-out
 * step-start
 * step-end
-* cubic-bezier (this one is a little tricky -- try it out and see how it works [here](http://cubic-bezier.com/#.17,.67,.83,.67))
+* cubic-bezier
 
 Setting the timing function to `ease` looks like this:
 

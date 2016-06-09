@@ -353,17 +353,86 @@ Now, we can clean up all these individual lines specificing our transition prope
 
 #### What are CSS Transformations?
 
+As defined by [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms):
+"By modifying the coordinate space, CSS transforms change the shape and position of the affected content without disrupting the normal document flow."
 
+We implement transforms in much the same way that we implemented transitions: we use a set of CSS properties that allow us to apply linear transformations to HTML elements. Transitions include: rotation, skewing, and scaling.
 
 #### Let's Try Some Transformations!
 
+We'll use the same HTML:
 
+```html
+<div class="container">
+  <div class="box"></div>
+</div>
+```
 
+and let's use this as our CSS:
 
+```css
+.container {
+  border: 1px solid grey;
+  height: 400px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
 
+.box {
+  background-color: yellow;
+  border-top: 5px solid red;
+  height: 95px;
+  width: 100px;
+  -webkit-transform: rotate(45deg);
+}
+```
 
+Try it out in this [CodePen](http://codepen.io/LouisaBarrett/pen/rLxjVG).
 
+In this example, we see that `rotate` takes an argument that is the degrees of rotation we want. If we have a positive number here, it rotates clockwise. If we have a negative number, it rotates counter clockwise.
 
+Try a few more approaches to `rotate` and see what they do.
+
+```css
+  -webkit-transform: rotate(.5turn);
+```
+
+```css
+  -webkit-transform: rotate(.75turn);
+```
+
+Now for the fun part! To maximize the power of our transforms, we combine them with transitions.
+
+Back in our CSS, let's add a transition to our `.box` add a `:hover` to our `.container`. Move our tranform into the block of CSS on `:hover` so that is what we trigger when we hover over our wrapping element:
+
+```css
+.container {
+  border: 1px solid grey;
+  height: 400px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.box {
+  background-color: yellow;
+  border-top: 5px solid red;
+  height: 95px;
+  width: 100px;
+  transition: 1s ease-in-out;
+}
+
+.container:hover .box {
+  -webkit-transform: rotate(2turn);
+}
+```
+
+Now that's much more like an animation!
+
+#### Your Turn
+
+Take a crack at implementing the scale and skewing transformations!
 
 
 

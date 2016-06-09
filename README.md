@@ -304,11 +304,11 @@ Let's try one that's a little more interesting! `steps` lets you assign a specif
   height: 300px;
   width: 25%;
   transition-duration: 1s;
-  transition-timing-function: steps(4);
+  transition-timing-function: steps(4, end);
 }
 ```
 
-Another property we can use is `cubic-bezier`. If you've used software to create vector graphics (like Adobe Illustrator) you're probably familiar with the bezier pen tool. As the W3C descibes it:
+All of these `transition-timing-function` properties are mapped to `cubic-bezier`. If you've used software to create vector graphics (like Adobe Illustrator) you're probably familiar with the bezier pen tool. And since all these timing function properties are mapped to it, we can also just write them ourselves! As the W3C descibes it:
 "Specifies a [cubic-bezier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). The four values specify points P1 and P2 of the curve as (x1, y1, x2, y2). Both x values must be in the range [0, 1] or the definition is invalid. The y values can exceed this range."
 
 Very simply put, it allows us to specify the speed and duration of our transition as it's happening. So we can set the starting speed, the speed during the middle, and the speed at the end. Lea Verou has a [great site](http://cubic-bezier.com/#.17,.67,.83,.67) to help you see how different specifications will impact your transition.
@@ -322,9 +322,51 @@ Let's try it out. We'll start with something very dramitic, so play around with 
   height: 300px;
   width: 25%;
   transition-duration: 1s;
-  transition-timing-function: cubic-bezier(1, 1, 1, 10);
+  transition-timing-function: cubic-bezier(1, -1, 1, 5);
 }
 ```
+
+We can also delay when the transition begins with the `transition-delay` property. This lets us specify in seconds or miliseconds how long it should take for the tranistion to execute. Let's try it.
+
+```css
+.box {
+  background-color: yellow;
+  border-radius: 30px;
+  height: 300px;
+  width: 25%;
+  transition-duration: 1s;
+  transition-delay: 2s;
+}
+```
+
+Now, we can clean up all these individual lines specificing our transition properties. The order in the shorthand is important, because the second time value specified will always be considered the `transition-delay`. Here's an example:
+
+```css
+.box {
+  background-color: yellow;
+  border-radius: 30px;
+  height: 300px;
+  width: 25%;
+  transition: margin 1s cubic-bezier(1, -1, 1, 5) 0s;
+}
+```
+
+#### What are CSS Transformations?
+
+
+
+#### Let's Try Some Transformations!
+
+
+
+
+
+
+
+
+
+
+
 
 
 

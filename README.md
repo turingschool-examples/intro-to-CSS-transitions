@@ -120,7 +120,7 @@ div:hover {
 }
 ```
 
-You can take a look at this code live on [CodePen](http://codepen.io/LouisaBarrett/pen/pbggJK). Go ahead and play around with it! Try changing the property that's being targeted. Try adjusting the amount of time that the transition is executing over. It's important to note that not all properties are animatable. The full list of all the animatable properties we can use can be viewed [here](https://www.w3.org/TR/css3-transitions/#animatable-properties)
+**You can take a look at this code live on [CodePen](http://codepen.io/LouisaBarrett/pen/pbggJK)**. Go ahead and play around with it! Try changing the property that's being targeted. Try adjusting the amount of time that the transition is executing over. It's important to note that not all properties are animatable. The full list of all the animatable properties we can use can be viewed [here](https://www.w3.org/TR/css3-transitions/#animatable-properties)
 
 Hmm. Something isn't quite right with this example. When we trigger the transition, the duration and timing function properties kick in and we have a nice smooth transition, but when we move our cursor off it changes back to the original state very abruptly. That's not what we want! But there's good news, it's an easy fix. In the Codepen, move the CSS transition properties from `div:hover` into `div`. This change let's us trigger the transitions when we start the transition and again as it's transitioning back to it's original state. The code looks like this:
 
@@ -200,7 +200,7 @@ div:hover {
 }
 ```
 
-Great! We can make a simple transition, now let's try something a little more dynamic. Let's make something move across the screen. You can check out this code on [CodePen](http://codepen.io/LouisaBarrett/pen/dXGpPo).
+Great! We can make a simple transition, now let's try something a little more dynamic. Let's make something move across the screen. **You can check out this code on [CodePen](http://codepen.io/LouisaBarrett/pen/dXGpPo).**
 
 In our HTML, let's make a div with a class of `.box`, and wrap it in another larger div with a class of `.container`.
 
@@ -388,7 +388,7 @@ and let's use this as our CSS:
 }
 ```
 
-Try it out in this [CodePen](http://codepen.io/LouisaBarrett/pen/rLxjVG).
+**Try it out in this [CodePen](http://codepen.io/LouisaBarrett/pen/rLxjVG).**
 
 In this example, we see that `rotate` takes an argument that is the degrees of rotation we want. If we have a positive number here, it rotates clockwise. If we have a negative number, it rotates counter clockwise.
 

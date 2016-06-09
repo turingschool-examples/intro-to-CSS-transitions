@@ -1,7 +1,7 @@
 ---
-title: CSS Animations and Transitions
+title: CSS Transitions and Transformations
 length: 
-tags: animation, transition, css
+tags: animation, transition, transformations, css
 ---
 
 ### Goals

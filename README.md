@@ -141,7 +141,7 @@ div:hover {
 }
 ```
 
-You can also chain properities that you want to transition. Let's change the `border-radius` at the same time as the `background-color`, and set them to different duration speeds.
+You can also chain properties that you want to transition. Let's change the `border-radius` at the same time as the `background-color`, and set them to different duration speeds.
 
 ```css
 div {
@@ -339,17 +339,6 @@ We can also delay when the transition begins with the `transition-delay` propert
 }
 ```
 
-Now, we can clean up all these individual lines specifying our transition properties. The order in the shorthand is important, because the second time value specified will always be considered the `transition-delay`. Here's an example:
-
-```css
-.box {
-  background-color: yellow;
-  border-radius: 30px;
-  height: 300px;
-  width: 25%;
-  transition: margin 1s cubic-bezier(1, -1, 1, 5) 0s;
-}
-```
 
 #### What are CSS Transformations?
 
@@ -430,6 +419,40 @@ Back in our CSS, let's add a transition to our `.box` add a `:hover` to our `.co
 
 Now that's much more like an animation!
 
+We can also change where the origin of the transform is, with the `transform-origin` property. For example, this lets you control the X and Y axis that the transformation is originating from. You can change this by specifying a different origin value.
+
+For example, `transform-origin: 50% 50%` puts the origin at 50% of the X axis and 50% of the Y axis, which is right in the middle of the element you are transforming. `transform-origin: 100% 100%` puts the origin at 100% of the X and Y axis which is the lower right corner.
+
+Let's try adding it to our code:
+
+```css
+.container {
+  border: 1px solid grey;
+  height: 400px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.box {
+  background-color: yellow;
+  border-top: 5px solid red;
+  height: 95px;
+  width: 100px;
+  transition: 1s ease-in-out;
+}
+
+.container:hover .box {
+  -webkit-transform: rotate(2turn);
+  -webkit-transform-origin: 100% 100%;
+}
+```
+
+You can also use position key words like `top`, `right`, `bottom`, and `left`.
+
+Try adjusting the `transform-origin` value numbers and see what happens!
+
+
 #### Your Turn
 
-Take a crack at implementing the scale and skewing transformations!
+Take a crack at implementing the [scale](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale) and [skew](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew) transformations!

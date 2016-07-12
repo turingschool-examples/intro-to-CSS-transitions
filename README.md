@@ -1,6 +1,6 @@
 ---
 title: CSS Transitions and Transformations
-length: 
+length:
 tags: animation, transition, transformations, css
 ---
 
@@ -13,7 +13,7 @@ By the end of this lesson, you will::
 
 You might think you need to write a good bit of Javascript to incorporate animations in a website, but that's not the case! We can use good ol' CSS to make transitions and animations, no Javascript required.
 
-This is surprising to many who think of CSS as simply a way to create layouts, but one of the great things about CSS animations is that the barrier of entry is lower than doing a similiar task with JS. 
+This is surprising to many who think of CSS as simply a way to create layouts, but one of the great things about CSS animations is that the barrier of entry is lower than doing a similar task with JS.
 
 In this lesson, we'll start to get familiar with CSS transitions and transforms. By the end of class, you'll be able to add these experience-enhancing elements to your CSS!
 
@@ -24,7 +24,7 @@ CSS transitions allow property changes in CSS values to occur smoothly over a sp
 
 We trigger transition in many of the same ways we might trigger a Javascript action -- on hover, mouse click, focus, or changes to the element.
 
-There are **specific properties** associated with transtions that let us set exactly how we want our transition to execute.
+There are **specific properties** associated with transitions that let us set exactly how we want our transition to execute.
 
 
 ``transition-property`` lets us specify which CSS property (or properties) we are setting the transition on. This can be written to specify one CSS property, or all CSS properties. A full list of supported properties can be found [here](https://www.w3.org/TR/css3-transitions/#animatable-css).
@@ -46,7 +46,7 @@ div {
 ```
 
 
-``transition-duration`` sets the amount of time the transition will take to execute. We specify the number or seconds, or miliseconds, the transition should take to complete. Setting the duration to one second looks like this:
+``transition-duration`` sets the amount of time the transition will take to execute. We specify the number or seconds, or milliseconds, the transition should take to complete. Setting the duration to one second looks like this:
 
 ```css
 div {
@@ -65,7 +65,7 @@ div .d { transition-delay: 3s; }
 ```
 
 
-``transition-timing-function`` defines how a transition will proceed over it's duration and allows the transition to change speed during it's course. This property accepts predefined keyowrd values, which you can read about indepth in the W3C definition of them [here](https://www.w3.org/TR/css3-transitions/#transition-timing-function-property), and include:
+``transition-timing-function`` defines how a transition will proceed over it's duration and allows the transition to change speed during it's course. This property accepts predefined keyword values, which you can read about in-depth in the W3C definition of them [here](https://www.w3.org/TR/css3-transitions/#transition-timing-function-property), and include:
 
 * ease
 * linear
@@ -79,7 +79,7 @@ div .d { transition-delay: 3s; }
 Setting the timing function to `ease` looks like this:
 
 ```css
-div { 
+div {
     transition-timing-function: ease;
 }
 ```
@@ -161,7 +161,7 @@ div:hover {
 }
 ```
 
-Since we really are simply animating all the animatable properties here, we can write it a more consise way by setting the `transition-property` to `all`:
+Since we really are simply animating all the animatable properties here, we can write it a more concise way by setting the `transition-property` to `all`:
 
 ```css
 div {
@@ -229,7 +229,7 @@ In our CSS, let's style these divs so we have something to work with:
 }
 ```
 
-Let's have the transition triggered when we hover over the outer `.container `rather than the inner `.box`. This will make it easier for us to trigger the transition and see the entire transiton play out. Let's add that `:hover` to our CSS:
+Let's have the transition triggered when we hover over the outer `.container `rather than the inner `.box`. This will make it easier for us to trigger the transition and see the entire transition play out. Let's add that `:hover` to our CSS:
 
 ```css
 .container {
@@ -275,11 +275,11 @@ Cool! But that doesn't look very good, does it? Transitions to the rescue! Let's
 }
 ```
 
-Remeber, putting the transition property directly on the `.box` class rather than the `:hover` means we will get our transition as it's triggered and as it's ending.
+Remember, putting the transition property directly on the `.box` class rather than the `:hover` means we will get our transition as it's triggered and as it's ending.
 
 We can now go a step further and control the speed and duration of this transition with timing functions. We do this with the [`transition-timing-function` property](https://www.w3.org/TR/css3-transitions/#transition-timing-function-property).
 
-We can do some intersting things with this property. Let's try a few out! Add the `transition-timing-function` to `.box`.
+We can do some interesting things with this property. Let's try a few out! Add the `transition-timing-function` to `.box`.
 
 Let's start simple:
 
@@ -308,12 +308,12 @@ Let's try one that's a little more interesting! `steps` lets you assign a specif
 }
 ```
 
-All of these `transition-timing-function` properties are mapped to `cubic-bezier`. If you've used software to create vector graphics (like Adobe Illustrator) you're probably familiar with the bezier pen tool. And since all these timing function properties are mapped to it, we can also just write them ourselves! As the W3C descibes it:
+All of these `transition-timing-function` properties are mapped to `cubic-bezier`. If you've used software to create vector graphics (like Adobe Illustrator) you're probably familiar with the bezier pen tool. And since all these timing function properties are mapped to it, we can also just write them ourselves! As the W3C describes it:
 "Specifies a [cubic-bezier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). The four values specify points P1 and P2 of the curve as (x1, y1, x2, y2). Both x values must be in the range [0, 1] or the definition is invalid. The y values can exceed this range."
 
 Very simply put, it allows us to specify the speed and duration of our transition as it's happening. So we can set the starting speed, the speed during the middle, and the speed at the end. Lea Verou has a [great site](http://cubic-bezier.com/#.17,.67,.83,.67) to help you see how different specifications will impact your transition.
 
-Let's try it out. We'll start with something very dramitic, so play around with it and see how different inputs change the transition:
+Let's try it out. We'll start with something very dramatic, so play around with it and see how different inputs change the transition:
 
 ```css
 .box {
@@ -326,7 +326,7 @@ Let's try it out. We'll start with something very dramitic, so play around with 
 }
 ```
 
-We can also delay when the transition begins with the `transition-delay` property. This lets us specify in seconds or miliseconds how long it should take for the tranistion to execute. Let's try it.
+We can also delay when the transition begins with the `transition-delay` property. This lets us specify in seconds or milliseconds how long it should take for the transition to execute. Let's try it.
 
 ```css
 .box {
@@ -339,7 +339,7 @@ We can also delay when the transition begins with the `transition-delay` propert
 }
 ```
 
-Now, we can clean up all these individual lines specificing our transition properties. The order in the shorthand is important, because the second time value specified will always be considered the `transition-delay`. Here's an example:
+Now, we can clean up all these individual lines specifying our transition properties. The order in the shorthand is important, because the second time value specified will always be considered the `transition-delay`. Here's an example:
 
 ```css
 .box {
@@ -404,7 +404,7 @@ Try a few more approaches to `rotate` and see what they do.
 
 Now for the fun part! To maximize the power of our transforms, we combine them with transitions.
 
-Back in our CSS, let's add a transition to our `.box` add a `:hover` to our `.container`. Move our tranform into the block of CSS on `:hover` so that is what we trigger when we hover over our wrapping element:
+Back in our CSS, let's add a transition to our `.box` add a `:hover` to our `.container`. Move our transform into the block of CSS on `:hover` so that is what we trigger when we hover over our wrapping element:
 
 ```css
 .container {
@@ -433,9 +433,3 @@ Now that's much more like an animation!
 #### Your Turn
 
 Take a crack at implementing the scale and skewing transformations!
-
-
-
-
-
-

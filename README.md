@@ -6,7 +6,7 @@ tags: animation, transition, transformations, css
 
 ### Goals
 
-By the end of this lesson, you will::
+By the end of this lesson, you will:
 
 * Have a general understanding of CSS Transitions and Transforms
 * Be familiar with the basic concepts and syntax and be able to implement them in your CSS
@@ -83,7 +83,6 @@ div {
     transition-timing-function: ease;
 }
 ```
-
 
 #### Let's Try Some Transitions!
 
@@ -337,6 +336,17 @@ We can also delay when the transition begins with the `transition-delay` propert
   transition-duration: 1s;
   transition-delay: 2s;
 }
+```
+
+#### Your Turn
+
+Time to practice! Make 4 divs inside a wrapping element. When the wrapping element is hovered on, apply different transitions to all 4 internal divs using `transition-delay` so the transition execute at different times. Make them move, change colors, change borders, go nuts. Use this block of code as a starting point:
+
+```css
+div .a { transition-delay: 0s; }
+div .b { transition-delay: 1s; }
+div .c { transition-delay: 2s; }
+div .d { transition-delay: 3s; }
 ```
 
 

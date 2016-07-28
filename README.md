@@ -321,7 +321,7 @@ Let's try it out. We'll start with something very dramatic, so play around with 
   height: 300px;
   width: 25%;
   transition-duration: 1s;
-  transition-timing-function: cubic-bezier(1, -1, 1, 5);
+  transition-timing-function: cubic-bezier(1, -1, 1, .5);
 }
 ```
 
@@ -429,7 +429,7 @@ Back in our CSS, let's add a transition to our `.box` add a `:hover` to our `.co
 
 Now that's much more like an animation!
 
-We can also change where the origin of the transform is, with the `transform-origin` property. For example, this lets you control the X and Y axis that the transformation is originating from. You can change this by specifying a different origin value.
+We can also change where the origin of the transform is, with the `transform-origin` property. This lets you control the X and Y axis that the transformation is originating from. You can change this by specifying a different origin value.
 
 For example, `transform-origin: 50% 50%` puts the origin at 50% of the X axis and 50% of the Y axis, which is right in the middle of the element you are transforming. `transform-origin: 100% 100%` puts the origin at 100% of the X and Y axis which is the lower right corner.
 

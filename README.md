@@ -8,17 +8,17 @@ tags: animation, transition, transformations, css
 
 By the end of this lesson, you will:
 
-* Have a general understanding of CSS Transitions and Transforms
+* Have a general understanding of CSS Transitions, Transforms, and Animations
 * Be familiar with the basic concepts and syntax and be able to implement them in your CSS
 
 You might think you need to write a good bit of Javascript to incorporate animations in a website, but that's not the case! We can use good ol' CSS to make transitions and animations, no Javascript required.
 
 This is surprising to many who think of CSS as simply a way to create layouts, but one of the great things about CSS animations is that the barrier of entry is lower than doing a similar task with JS.
 
-In this lesson, we'll start to get familiar with CSS transitions and transforms. By the end of class, you'll be able to add these experience-enhancing elements to your CSS!
+In this lesson, we'll start to get familiar with CSS transitions, transforms, and animations. By the end of class, you'll be able to add these experience-enhancing elements to your CSS!
 
 
-#### What are CSS Transitions?
+### What are CSS Transitions?
 
 CSS transitions allow property changes in CSS values to occur smoothly over a specified duration of time. They allow you to create dynamic effects without using any Javascript.
 
@@ -350,7 +350,7 @@ div .d { transition-delay: 3s; }
 ```
 
 
-#### What are CSS Transformations?
+### What are CSS Transformations?
 
 As defined by [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms):
 "By modifying the coordinate space, CSS transforms change the shape and position of the affected content without disrupting the normal document flow."
@@ -466,3 +466,222 @@ Try adjusting the `transform-origin` value numbers and see what happens!
 #### Your Turn
 
 Take a crack at implementing the [scale](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale) and [skew](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew) transformations!
+
+
+### What are CSS Animations
+
+For more involved movement, we can use CSS animations rather than transitions and transformations. What's the difference? A transition is typically a state change that goes from A to B (like a `:hover` state), while an animation may have many stages from A to B to C to D.
+
+While there are many similar concepts used in transitions/transformations and animations, the biggest difference is that animations use `@keyframes`, the CSS rule where we write out the sequence of our animation. The `@keyframes` rule can be thought of as a timeline where we define the stages of our animation with each stage having it's own CSS declaration.
+
+It's important to note that `@keyframes` must be bound to a selector -- this is how it knows where to apply the animation styles you've defined.
+
+#### Keyframes
+
+A `@keyframes` has the following properties:
+
+* A name that we can reference when we bind it to our selector
+* Stages from 0% to 100%
+* CSS styles to control the changes and styling you want applied in each stage
+
+Together, this looks like:
+
+```CSS
+@keyframes testAnimation {
+  0% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: aqua;
+  }
+}
+```
+
+Which can also be written using "from" and "to" rather than 0% - 100%:
+
+```CSS
+@keyframes testAnimation {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: aqua;
+  }
+}
+```
+
+And just like that, we've defined the stages of our keyframes! In this case, we'll be moving from yellow to aqua. Read more about `@keyframes` in the [W3 spec](https://www.w3.org/TR/css3-animations/#keyframes).
+
+#### Animation properties
+
+Like transitions, there are specific `animation` properties we can use when we call `@keyframes` and a single animation can have more than one property applied to it.
+
+You'll find many of these to be familiar if you've played around with transitions:
+
+* `animation-name: name-of-keyframe` is how we call our `@keyframe` from within our CSS selector, and it's the only property that you _must_ use. It's what hooks up our animation.
+
+* `animation-duration` indicated how long our animation should take to execute.
+
+* `animation-timing-function` works just the same way as `transition-timing-function` does, it sets the speed of our animation using pre-set functions or your own custom `cubic-bezier` function.
+
+* `animation-delay` sets how long it should be before our animation starts
+
+* `animation-iteration-count` indicates how many times the animation will iterate through the stages set in `@keyframes`
+
+* `animation-direction` allows you to change the direction of the animation loop direction, switching from start to end, to end to start, or both.
+
+* `animation-fill-mode` indicates which styles will be applied to the element when our animation is finished (these include none, forwards, backwards, or both)
+
+Let's take a look at what that looks like in our CSS:
+
+```CSS
+selector {
+  animation-name: testAnimation;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+```
+
+Once you get a handle on all the different properties and what they do, you can also write them in shorthand:
+
+```CSS
+selector {
+  animation: testAnimation 4s 1s infinite linear alternate;
+}
+```
+
+And with that, we've called the keyframe rule for `testAnimation` in our selector (this could be a `div`, a class, and id -- any selector you want).
+
+#### Vendor Prefixes
+
+CSS Animations is still a W3 working draft, which means that we still need to use vendor prefixes to help us minimize buggy behavior across browsers. We use the usual prefixes:
+
+* Chrome & Safari: `-webkit-`
+* Firefox: `-moz-`
+* Opera: `-o-`
+* Internet Explorer: `-ms-`
+
+Setting these on your selector looks like this:
+
+```CSS
+selector {
+  -webkit-animation: testAnimation 4s 1s infinite linear alternate;
+  -moz-animation: testAnimation 4s 1s infinite linear alternate;
+  -ms-animation: testAnimation 4s 1s infinite linear alternate;
+  -o-animation: testAnimation 4s 1s infinite linear alternate;
+  animation: testAnimation 4s 1s infinite linear alternate;
+}
+```
+
+And your `@keyframes` would look like this:
+
+```CSS
+@-webkit-keyframes testAnimation  { /* define styles here */ }
+@-moz-keyframes testAnimation  { /* define styles here */ }
+@-ms-keyframes testAnimation  { /* define styles here */ }
+@-o-keyframes testAnimation  { /* define styles here */ }
+@keyframes testAnimation  { /* define styles here */ }
+```
+
+For experimenting in CodePen, you can get away with not using prefixes, but if you want to actually use an animation in an app or website be sure to include them.
+
+#### Combining Animations
+
+It's also possible to add more than one animation to a selector. We do this using a comma to separate the two.
+
+It looks like this in our selector:
+
+```css
+.element {
+  animation: testAnimation 4s 1s infinite linear alternate,
+             testRotate 4s 1s infinite linear alternate;
+}
+```
+
+And in our `@keyframes` we simply define two separate, appropriately names keyframe rules:
+
+```CSS
+@keyframes testAnimation  {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: aqua;
+  }
+}
+
+@keyframes testRotate {
+  to {
+    transform: rotate(45deg);
+  }
+}
+```
+
+#### Putting It Together
+
+Let's try this out! Open up a new CodePen and let's make a shape that changes color and shape.
+
+We'll start with our HTML selector:
+
+```HTML
+<div></div>
+```
+
+Yup. That's right, for this simple example all we need is a div to manipulate in our HTML. On to the CSS!
+
+Let's start with setting up our basic styles on our div. We'll put a width, height, background color on it, and then center it so it looks nice.
+
+```CSS
+div {
+  background: yellow;
+  height: 200px;
+  width: 200px;
+  margin: 100px auto 0;
+}
+```
+
+Next, let's add our `@keyframe` rule. We'll keep this simple and just have two stages:
+
+```CSS
+@keyframes testAnimation {
+  0% {
+    transform: rotate(360deg);
+    border-radius: 50% 0 50% 0;
+  }
+  100% {
+    background-color: aqua;
+    border-radius: 0 50% 0 50%;
+  }
+}
+```
+
+Let's talk through what we've done here: We set a border-radius on the top left and bottom right corners in the first stage, and then in the second stage we move the border-radius to the top right and bottom left corners as well as changing the background color to aqua. We also added a transform to the first stage to rotate our shape to make it a little more dynamic.
+
+Hmm. That's not doing anything. How annoying. Why is that?
+
+Well, we haven't called our `@keyframe` in our selector yet! That's an easy fix. We'll use the verbose format for now, so it's easier to see exactly what animation properties we're using. Update your `div` styles:
+
+```CSS
+div {
+  background: yellow;
+  height: 200px;
+  width: 200px;
+  margin: 100px auto 0;
+
+  animation-name: testAnimation;
+  animation-duration: 3s;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+```
+
+And with that, you've made a CSS animation! Check out the final solution [here](http://codepen.io/LouisaBarrett/pen/zKOovv).
+
+#### Your Turn
+
+Make a 4-stage animation. Experiment!

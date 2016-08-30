@@ -510,7 +510,7 @@ Which can also be written using "from" and "to" rather than 0% - 100%:
 }
 ```
 
-And just like that, we've defined the stages of our keyframes! In this case, we'll be moving from yellow to aqua. Read more about `@keyframes` in the [W3 spec](https://www.w3.org/TR/css3-animations/#keyframes).
+And just like that, we've defined the stages of our keyframes! In this case, we'll be moving from yellow to aqua. Read more about `@keyframes` in the [W3C spec](https://www.w3.org/TR/css3-animations/#keyframes).
 
 #### Animation properties
 
@@ -557,7 +557,7 @@ And with that, we've called the keyframe rule for `testAnimation` in our selecto
 
 #### Vendor Prefixes
 
-CSS Animations is still a W3 working draft, which means that we still need to use vendor prefixes to help us minimize buggy behavior across browsers. We use the usual prefixes:
+CSS Animations is still a W3C working draft, which means that we still need to use vendor prefixes to help us minimize buggy behavior across browsers. We use the usual prefixes:
 
 * Chrome & Safari: `-webkit-`
 * Firefox: `-moz-`

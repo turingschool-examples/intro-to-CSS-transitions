@@ -115,7 +115,6 @@ div:hover {
     background-color: green;
     transition-property: background-color;
     transition-duration: 2s;
-    transition-timing-function: ease;
 }
 ```
 
@@ -132,7 +131,6 @@ div {
     margin: 0 auto;
     transition-property: background-color;
     transition-duration: 2s;
-    transition-timing-function: ease;
 }
 
 div:hover {
@@ -151,7 +149,6 @@ div {
     margin: 0 auto;
     transition-property: background-color, border-radius;
     transition-duration: 2s, 4s;
-    transition-timing-function: ease;
 }
 
 div:hover {
@@ -160,7 +157,7 @@ div:hover {
 }
 ```
 
-Since we really are simply animating all the animatable properties here, we can write it a more concise way by setting the `transition-property` to `all`:
+Since we really are simply animating all the animatable properties here, we can write it a more concise way by setting the `transition-property` to `all`, but note that when we do this we lose the different transition durations we applied when we were explicitly targeting our CSS properties:
 
 ```css
 div {
@@ -171,7 +168,6 @@ div {
     margin: 0 auto;
     transition-property: all;
     transition-duration: 2s, 4s;
-    transition-timing-function: ease;
 }
 
 div:hover {
@@ -180,7 +176,7 @@ div:hover {
 }
 ```
 
-And since `transition-property: all` is the default, we can actually just remove that line all together!
+And since `transition-property: all` is the default, we can actually just remove that line all together! And, since we've lost our targeted `transition-duration`, we can go ahead and adjust that as well:
 
 ```css
 div {
@@ -189,8 +185,7 @@ div {
     height: 300px;
     width: 300px;
     margin: 0 auto;
-    transition-duration: 2s, 4s;
-    transition-timing-function: ease;
+    transition-duration: 4s;
 }
 
 div:hover {

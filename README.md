@@ -13,7 +13,7 @@ By the end of this lesson, you will:
 
 You might think you need to write a good bit of Javascript to incorporate animations in a website, but that's not the case! We can use good ol' CSS to make transitions and animations, no Javascript required.
 
-This is surprising to many who think of CSS as simply a way to create layouts, but one of the great things about CSS animations is that the barrier of entry is lower than doing a similar task with JS.
+This is surprising to many who think of CSS as simply a way to create layouts, and one of the great things about CSS animations is that the barrier of entry is lower than doing a similar task with JS.
 
 In this lesson, we'll start to get familiar with CSS transitions, transforms, and animations. By the end of class, you'll be able to add these experience-enhancing elements to your CSS!
 
@@ -22,7 +22,7 @@ In this lesson, we'll start to get familiar with CSS transitions, transforms, an
 
 CSS transitions allow property changes in CSS values to occur smoothly over a specified duration of time. They allow you to create dynamic effects without using any Javascript.
 
-We trigger transition in many of the same ways we might trigger a Javascript action -- on hover, mouse click, focus, or changes to the element.
+The most common way to trigger a transition is with a `:hover` action.
 
 There are **specific properties** associated with transitions that let us set exactly how we want our transition to execute.
 

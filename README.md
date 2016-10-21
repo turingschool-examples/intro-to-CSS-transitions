@@ -11,11 +11,11 @@ By the end of this lesson, you will:
 * Have a general understanding of CSS Transitions, Transforms, and Animations
 * Be familiar with the basic concepts and syntax and be able to implement them in your CSS
 
-You might think you need to write a good bit of Javascript to incorporate animations in a website, but that's not the case! We can use good ol' CSS to make transitions and animations, no Javascript required.
+You might think you need to write a good bit of Javascript to incorporate animations in a website, but that's not the case. We can use good ol' CSS to make transitions and animations, no Javascript required.
 
 This is surprising to many who think of CSS as simply a way to create layouts, and one of the great things about CSS animations is that the barrier of entry is lower than doing a similar task with JS.
 
-In this lesson, we'll start to get familiar with CSS transitions, transforms, and animations. By the end of class, you'll be able to add these experience-enhancing elements to your CSS!
+In this lesson, we'll start to get familiar with CSS transitions, transforms, and animations. By the end of class, you'll be able to add these experience-enhancing elements to your CSS.
 
 
 ### What are CSS Transitions?
@@ -88,7 +88,7 @@ div {
 
 We'll start by writing some simple HTML so our CSS has something to work with. An empty div will be just fine --  we'll just put a width, height, and background color on it to give us something to play with. **You can take a look at this code live on [CodePen](http://codepen.io/LouisaBarrett/pen/pbggJK)**.
 
-Here's what we'll be working with:
+All we'll need to get started is a plain ol' `div`. Here's what the full HTML structure we'll be working with would look like:
 
 ```html
 <!doctype html>

@@ -22,12 +22,12 @@ In this lesson, we'll start to get familiar with CSS transitions, transforms, an
 
 CSS transitions allow property changes in CSS values to occur smoothly over a specified duration of time. They allow you to create dynamic effects without using any Javascript.
 
-The most common way to trigger a transition is with a `:hover` action.
+A common way to trigger a transition is with a `:hover` action.
 
 There are **specific properties** associated with transitions that let us set exactly how we want our transition to execute.
 
 
-``transition-property`` lets us specify which CSS property (or properties) we are setting the transition on. This can be written to specify one CSS property, or all CSS properties. A full list of supported properties can be found [here](https://www.w3.org/TR/css3-transitions/#animatable-css).
+``transition-property`` lets us specify which CSS property (or properties) we are setting the transition on. This can be written to specify one CSS property, or all CSS properties. [A full list of supported properties can be found here](https://www.w3.org/TR/css3-transitions/#animatable-css).
 
 It looks like this when we specify one CSS property:
 
@@ -65,7 +65,7 @@ div .d { transition-delay: 3s; }
 ```
 
 
-``transition-timing-function`` defines how a transition will proceed over it's duration and allows the transition to change speed during it's course. This property accepts predefined keyword values, which you can read about in-depth in the W3C definition of them [here](https://www.w3.org/TR/css3-transitions/#transition-timing-function-property), and include:
+``transition-timing-function`` defines how a transition will proceed over it's duration and allows the transition to change speed during it's course. This property accepts predefined keyword values, which you can read about [in-depth in the W3C definition of them here](https://www.w3.org/TR/css3-transitions/#transition-timing-function-property), and include:
 
 * ease
 * linear
@@ -86,7 +86,9 @@ div {
 
 #### Let's Try Some Transitions!
 
-We'll start by writing some simple HTML so our CSS has something to work with. An empty div will be just fine --  we'll just put a width, height, and background color on it to give us something to play with.
+We'll start by writing some simple HTML so our CSS has something to work with. An empty div will be just fine --  we'll just put a width, height, and background color on it to give us something to play with. **You can take a look at this code live on [CodePen](http://codepen.io/LouisaBarrett/pen/pbggJK)**.
+
+Here's what we'll be working with:
 
 ```html
 <!doctype html>
@@ -118,9 +120,9 @@ div:hover {
 }
 ```
 
-**You can take a look at this code live on [CodePen](http://codepen.io/LouisaBarrett/pen/pbggJK)**. Go ahead and play around with it! Try changing the property that's being targeted. Try adjusting the amount of time that the transition is executing over. It's important to note that not all properties are animatable. The full list of all the animatable properties we can use can be viewed [here](https://www.w3.org/TR/css3-transitions/#animatable-properties)
+Go ahead and play around with it on CodePen (remember to fork and save or your work won't be saved). Try changing the property that's being targeted. Try adjusting the amount of time that the transition is executing over. It's important to note that not all properties are animatable. The full list of [all the animatable properties we can use can be viewed here](https://www.w3.org/TR/css3-transitions/#animatable-properties)
 
-Hmm. Something isn't quite right with this example. When we trigger the transition, the duration and timing function properties kick in and we have a nice smooth transition, but when we move our cursor off it changes back to the original state very abruptly. That's not what we want! But there's good news, it's an easy fix. In the Codepen, move the CSS transition properties from `div:hover` into `div`. This change let's us trigger the transitions when we start the transition and again as it's transitioning back to it's original state. The code looks like this:
+Hmm. Something isn't quite right with this example. When we trigger the transition, the duration and timing function properties kick in and we have a nice smooth transition, but when we move our cursor off it changes back to the original state very abruptly. That's not what we want! But there's good news, it's a simple fix. In the CodePen, move the CSS transition properties from `div:hover` into `div`. This change let's us trigger the transitions when we start the transition and again as it's transitioning back to it's original state. The code looks like this:
 
 ```css
 div {

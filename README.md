@@ -169,7 +169,7 @@ div {
     width: 300px;
     margin: 0 auto;
     transition-property: all;
-    transition-duration: 2s, 4s;
+    transition-duration: 4s;
 }
 
 div:hover {
@@ -178,7 +178,7 @@ div:hover {
 }
 ```
 
-And since `transition-property: all` is the default, we can actually just remove that line all together! And, since we've lost our targeted `transition-duration`, we can go ahead and adjust that as well:
+And since `transition-property: all` is the default, we can actually just remove that line all together!
 
 ```css
 div {
@@ -196,7 +196,7 @@ div:hover {
 }
 ```
 
-Great! We can make a simple transition, now let's try something a little more dynamic. Let's make something move across the screen. **You can check out this code on [CodePen](http://codepen.io/LouisaBarrett/pen/dXGpPo).**
+Great! Now that we can make a simple transition, now let's try something a little more dynamic. Let's make something move across the screen. **You can check out this code on [CodePen](http://codepen.io/LouisaBarrett/pen/dXGpPo).**
 
 In our HTML, let's make a div with a class of `.box`, and wrap it in another larger div with a class of `.container`.
 
@@ -291,7 +291,7 @@ Let's start simple:
 ```
 When you ran that, what did you notice? It didn't really look any different, did it? That's because `ease` is actually the default, so the the transformation shouldn't have changed.
 
-Let's try one that's a little more interesting! `steps` lets you assign a specific number of steps to the transition. Let's see what that looks like:
+That's no fun, so let's try one that's a little more interesting! `steps` lets you assign a specific number of steps to the transition. Let's see what that looks like:
 
 ```css
 .box {
@@ -337,7 +337,7 @@ We can also delay when the transition begins with the `transition-delay` propert
 
 #### Your Turn
 
-Time to practice! Make 4 divs inside a wrapping element. When the wrapping element is hovered on, apply different transitions to all 4 internal divs using `transition-delay` so the transition execute at different times. Make them move, change colors, change borders, go nuts. Use this block of code as a starting point:
+Time to practice! Make 4 divs inside a wrapping element. When the wrapping element is hovered on, apply different transitions to all 4 internal divs using `transition-delay` so the transitions execute at different times. Make them move, change colors, change borders, go nuts. Use this block of code as a starting point:
 
 ```css
 div .a { transition-delay: 0s; }
@@ -356,7 +356,7 @@ We implement transforms in much the same way that we implemented transitions: we
 
 #### Let's Try Some Transformations!
 
-We'll use the same HTML:
+We'll use the same HTML, and again, **try it out in this [CodePen](http://codepen.io/LouisaBarrett/pen/rLxjVG).**:
 
 ```html
 <div class="container">
@@ -364,7 +364,7 @@ We'll use the same HTML:
 </div>
 ```
 
-and let's use this as our CSS:
+and let's use something like this as our CSS:
 
 ```css
 .container {
@@ -383,8 +383,6 @@ and let's use this as our CSS:
   -webkit-transform: rotate(45deg);
 }
 ```
-
-**Try it out in this [CodePen](http://codepen.io/LouisaBarrett/pen/rLxjVG).**
 
 In this example, we see that `rotate` takes an argument that is the degrees of rotation we want. If we have a positive number here, it rotates clockwise. If we have a negative number, it rotates counter clockwise.
 
@@ -469,13 +467,13 @@ Take a crack at implementing the [scale](https://developer.mozilla.org/en-US/doc
 
 For more involved movement, we can use CSS animations rather than transitions and transformations. What's the difference? A transition is typically a state change that goes from A to B (like a `:hover` state), while an animation may have many stages from A to B to C to D.
 
-While there are many similar concepts used in transitions/transformations and animations, the biggest difference is that animations use `@keyframes`, the CSS rule where we write out the sequence of our animation. The `@keyframes` rule can be thought of as a timeline where we define the stages of our animation with each stage having it's own CSS declaration.
+While there are many similar concepts used in transitions/transformations and animations, the biggest difference is that animations use `@keyframes`, the CSS rule where we write out the sequence of our animation. The `@keyframes` rule can be thought of as a timeline where we define the stages of our animation with each stage having its own CSS declaration.
 
 It's important to note that `@keyframes` must be bound to a selector -- this is how it knows where to apply the animation styles you've defined.
 
 #### Keyframes
 
-A `@keyframes` has the following properties:
+`@keyframes` has the following properties:
 
 * A name that we can reference when we bind it to our selector
 * Stages from 0% to 100%
@@ -513,7 +511,7 @@ And just like that, we've defined the stages of our keyframes! In this case, we'
 
 Like transitions, there are specific `animation` properties we can use when we call `@keyframes` and a single animation can have more than one property applied to it.
 
-You'll find many of these to be familiar if you've played around with transitions:
+You'll find many of these to be familiar once you've played around with transitions:
 
 * `animation-name: name-of-keyframe` is how we call our `@keyframe` from within our CSS selector, and it's the only property that you _must_ use. It's what hooks up our animation.
 

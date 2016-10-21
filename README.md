@@ -169,7 +169,7 @@ div {
     width: 300px;
     margin: 0 auto;
     transition-property: all;
-    transition-duration: 4s;
+    transition-duration: 2s, 4s;
 }
 
 div:hover {
@@ -178,7 +178,7 @@ div:hover {
 }
 ```
 
-And since `transition-property: all` is the default, we can actually just remove that line all together!
+And since `transition-property: all` is the default, we can actually just remove that line all together. Let's also remove the extra `transition-duration` since it's not doing anything for us anymore.
 
 ```css
 div {
